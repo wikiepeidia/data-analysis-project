@@ -66,27 +66,27 @@
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| DATA-01 | TBD | Pending |
-| DATA-02 | TBD | Pending |
-| DATA-03 | TBD | Pending |
-| FACT-01 | TBD | Pending |
-| FACT-02 | TBD | Pending |
-| FACT-03 | TBD | Pending |
-| FACT-04 | TBD | Pending |
-| CAT-01 | TBD | Pending |
-| CAT-02 | TBD | Pending |
-| NLP-01 | TBD | Pending |
-| NLP-02 | TBD | Pending |
-| REPT-01 | TBD | Pending |
-| REPT-02 | TBD | Pending |
-| REPT-03 | TBD | Pending |
-| REPT-04 | TBD | Pending |
+| DATA-01 | Phase 1 | Pending |
+| DATA-02 | Phase 1 | Pending |
+| DATA-03 | Phase 1 | Pending |
+| FACT-01 | Phase 2 | Pending |
+| FACT-02 | Phase 2 | Pending |
+| FACT-03 | Phase 2 | Pending |
+| FACT-04 | Phase 3 | Pending |
+| CAT-01 | Phase 3 | Pending |
+| CAT-02 | Phase 3 | Pending |
+| NLP-01 | Phase 4 | Pending |
+| NLP-02 | Phase 4 | Pending |
+| REPT-01 | Phase 5 | Pending |
+| REPT-02 | Phase 5 | Pending |
+| REPT-03 | Phase 5 | Pending |
+| REPT-04 | Phase 5 | Pending |
 
 **Coverage:**
 - v1 requirements: 15 total
-- Mapped to phases: 0
-- Unmapped: 15 ⚠
+- Mapped to phases: 15
+- Unmapped: 0
 
 ---
 *Requirements defined: 2026-04-19*
-*Last updated: 2026-04-19 after initial definition*
+*Last updated: 2026-04-19 after roadmap creation*
