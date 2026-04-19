@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 from datetime import date
+from numbers import Integral
 from pathlib import Path
 import sys
 
@@ -107,7 +108,7 @@ def test_publish_to_first_trend_days_is_integer_days() -> None:
     us_video_b = snapshot.loc[(snapshot["country"] == "US") & (snapshot["video_id"] == "video-b")].iloc[0]
 
     assert us_video_a["publish_to_first_trend_days"] == 1
-    assert isinstance(us_video_a["publish_to_first_trend_days"], int)
+    assert isinstance(us_video_a["publish_to_first_trend_days"], Integral)
     assert us_video_b["publish_to_first_trend_days"] == 6
 
 
