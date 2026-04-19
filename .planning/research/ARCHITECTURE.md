@@ -1,13 +1,13 @@
 # Architecture Patterns
 
-**Domain:** Academic notebook analysis of multi-country YouTube trending data
+**Domain:** Academic report-first analysis of multi-country YouTube trending data
 **Researched:** 2026-04-19
-**Project style:** Single-repo, notebook-first workflow
+**Project style:** Single-repo, report-first workflow with checkpoint notebooks
 **Confidence:** HIGH for workflow structure, MEDIUM for full-corpus multilingual sentiment execution without model validation
 
 ## Recommended Architecture
 
-This project should be structured as a notebook-first analysis workflow centered on one canonical cleaned dataset. The main architectural rule is simple: raw CSV files are read once, standardized once, and every later section works from that canonical table or from clearly derived feature tables. For an academic repo, this gives reproducibility and a defensible audit trail without introducing unnecessary application-style complexity.
+This project should be structured as a report-first analysis workflow centered on one canonical cleaned dataset. The main architectural rule is simple: raw CSV files are read once, standardized once, and every later section works from that canonical table or from clearly derived feature tables. Checkpoint notebooks can support exploration and QA, but the final teacher submission should come from a cleaner report source. For an academic repo, this gives reproducibility and a defensible audit trail without introducing unnecessary application-style complexity.
 
 The observed repo state makes this separation necessary rather than optional. The `data/` directory contains 10 country CSV files with one shared schema and no category metadata JSON files. The available columns support country comparison, timing analysis, category comparison, engagement analysis, and text analysis through `title`, `tags`, and `description`. They do not include video duration, so any architecture that promises a duration analysis from current repo contents is unsound unless an explicit external enrichment step is added.
 
@@ -15,7 +15,7 @@ The text layer is also genuinely multilingual. Sample rows include English and K
 
 For a single-repo academic project, keep the physical implementation minimal:
 
-- One primary notebook as the final deliverable.
+- One primary Markdown or Quarto report source that renders the final Vietnamese PDF.
 - One optional helper module only if notebook cells start repeating loader or cleaning logic.
 - Optional cached intermediate outputs only for expensive steps such as NLP inference.
 
@@ -31,7 +31,7 @@ Raw country CSVs in data/
          -> factor-analysis branch
          -> NLP/sentiment branch
     -> integrated findings
-    -> final notebook visuals, recommendations, and report narrative
+    -> final report visuals, recommendations, and Vietnamese PDF narrative
 ```
 
 ### Component Boundaries
@@ -45,7 +45,7 @@ Raw country CSVs in data/
 | Factor Analysis | Run latent-factor modeling on standardized numeric features and interpret factor loadings | Visualization & Storytelling, Recommendations |
 | NLP / Sentiment Pipeline | Build multilingual text representations, sentiment outputs, semantic clusters, and tag/topic signals | Visualization & Storytelling, Recommendations |
 | Visualization & Storytelling | Convert branch outputs into a compact set of defensible charts and tables | Recommendations / Output Packaging |
-| Recommendations / Output Packaging | Turn evidence into guidance for a new channel and frame limitations clearly | Final notebook/report |
+| Recommendations / Output Packaging | Turn evidence into guidance for a new channel and frame limitations clearly | Final report PDF and report source |
 
 ## Data Flow
 
@@ -123,7 +123,7 @@ The current schema does not contain video duration. If the assignment asks for l
 - mark duration analysis as unsupported by the current dataset, or
 - add a separate external enrichment stage using the YouTube API.
 
-For the current single-repo notebook scope, the first option is the recommended one.
+For the current single-repo checkpoint-notebook scope, the first option is the recommended one.
 
 **Outputs:**
 - `feature_df`
@@ -242,7 +242,7 @@ Depends on: cleaned text fields and feature layer.
 7. **Build final visual storytelling.**
 Depends on: EDA, factor analysis, and NLP outputs.
 
-8. **Write recommendations and package the notebook/report.**
+8. **Write recommendations and package the final report PDF/source.**
 Depends on: all earlier stages.
 
 ## Dependency Map

@@ -70,12 +70,13 @@ Recent decisions affecting current work:
 - Phase 1: The canonical row dataset must record source encodings because the real corpus mixes UTF-8 and latin-1 files.
 - Phase 1: The notebook contract must explicitly name `trend_days_in_country_proxy`, frame findings as associations inside the trending corpus, and state that video duration is unavailable.
 - Phase 2: Reuse the Phase 1 parquet artifacts instead of re-reading the raw CSV corpus for feature engineering.
+- Final delivery: produce a proper Vietnamese PDF from a Markdown-friendly or Quarto-style report source; notebooks are checkpoints, not the final submission.
 - Phase 3: Treat category findings as credible only after country-aware normalization or stratification is shown.
 - Phase 4: Multilingual NLP must either use multilingual-aware handling or explicitly narrow language coverage.
 
 ### Pending Todos
 
-- Start Phase 2 discussion/planning to define timing, metadata, and engagement feature engineering on top of the Phase 1 parquet artifacts.
+- Start Phase 2 discussion/planning to define timing, metadata, and engagement feature engineering on top of the Phase 1 parquet artifacts, while preserving the final Vietnamese PDF delivery target.
 
 ### Blockers/Concerns
 

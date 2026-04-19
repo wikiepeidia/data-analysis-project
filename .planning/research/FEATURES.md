@@ -1,17 +1,17 @@
 # Feature Landscape
 
-**Domain:** Academic notebook/report-based analysis of Trending YouTube Video Statistics
+**Domain:** Academic report-first analysis of Trending YouTube Video Statistics with checkpoint notebooks
 **Researched:** 2026-04-19
-**Scope:** All country CSV files in `data/`; deliverable is a notebook/report, not a frontend app
+**Scope:** All country CSV files in `data/`; final deliverable is a teacher-ready Vietnamese PDF, not a frontend app, with notebooks kept as checkpoints
 **Confidence:** HIGH for assignment-fit recommendations, MEDIUM for optional differentiators
 
-A strong project in this domain should optimize for defensible analysis, not breadth for its own sake. The best notebook is the one that answers the required questions clearly, uses the dataset honestly, and converts findings into practical recommendations for a new YouTube channel.
+A strong project in this domain should optimize for defensible analysis, not breadth for its own sake. The best final report is the one that answers the required questions clearly, uses the dataset honestly, and converts findings into practical recommendations for a new YouTube channel, while checkpoint notebooks stay supporting artifacts.
 
 The key constraint is that this dataset contains videos that already trended. That means the project cannot directly answer "what makes any uploaded video trend" in a causal sense. Instead, it should analyze what characteristics are associated with stronger performance within the trending set and state that limitation explicitly.
 
 ## Table Stakes for This Assignment
 
-Features users expect. Missing = the notebook will feel incomplete or academically weak.
+Features users expect. Missing = the project will feel incomplete or academically weak.
 
 | Capability | Why Expected | Complexity | Major Dependencies | Notes |
 |---------|--------------|------------|--------------------|-------|
@@ -22,7 +22,7 @@ Features users expect. Missing = the notebook will feel incomplete or academical
 | Category comparison across markets | The assignment explicitly requires comparison across content categories. | Medium | Harmonized data, category identifiers, aggregation logic | Compare category-level views, engagement, publish timing, and sentiment patterns. If category labels are unavailable in-repo, use `category_id` consistently or add a small lookup table. |
 | Sentiment analysis on tags and descriptions | The assignment explicitly requires sentiment analysis, so some text-analysis capability is mandatory. | Medium | Text cleaning, tokenization policy, language-handling policy, missing-text handling | Baseline is enough if it is honest: sentiment on descriptions plus tag-text cues, with limitations for multilingual and keyword-style tags. |
 | Synthesis into recommendations for a new channel | The final deliverable must convert descriptive findings into practical guidance. | Low | Completed factor, sentiment, and category analyses | Recommendations should cover posting windows, category focus, metadata hygiene, and what not to over-interpret. |
-| Clear academic notebook/report structure | Even good analysis can score poorly if the narrative is weak. | Low | All prior analyses, plotting outputs, written interpretation | Minimum structure: question, data, preprocessing, method, findings, recommendations, limitations, conclusion. |
+| Clear academic report structure with checkpoint notebooks | Even good analysis can score poorly if the narrative is weak. | Low | All prior analyses, plotting outputs, written interpretation | Minimum structure: question, data, preprocessing, method, findings, recommendations, limitations, conclusion. |
 | Limitations and validity discussion | This dataset has selection bias, repeated rows per video, and cross-country language issues. Ignoring those would weaken the submission. | Low | Understanding of dataset structure and methods used | Must explicitly discuss correlation vs causation, trending-only sample bias, and multilingual text limitations. |
 
 ## Differentiators
@@ -44,7 +44,7 @@ Features to explicitly avoid because they add work without improving the assignm
 
 | Anti-Feature | Why Avoid | What to Do Instead |
 |--------------|-----------|-------------------|
-| Frontend dashboard or web app | The brief is notebook/report-first, and UI work will consume time that should go into analysis quality. | Build clear notebook sections and publication-quality figures. |
+| Frontend dashboard or web app | The brief is report-first, and UI work will consume time that should go into analysis quality. | Build clear checkpoint notebooks and publication-quality figures for the final report. |
 | Causal claims about the YouTube algorithm | The dataset is observational and includes only trending videos, so causal language would overstate the evidence. | Use associative language such as "is associated with" or "appears correlated with." |
 | Heavy deep-learning or LLM sentiment pipeline | The dataset text is noisy, multilingual, and often short; a complex model adds risk without guaranteed value. | Use a transparent baseline first, then add multilingual-aware sentiment only if time remains. |
 | Live scraping or YouTube API enrichment | This changes project scope, introduces reproducibility issues, and is unnecessary for the assignment questions. | Stay within the repository dataset and document its limitations honestly. |
@@ -74,7 +74,7 @@ Factor analysis + Category comparison + Sentiment analysis
 
 All analyses
   -> Limitations discussion
-  -> Final notebook/report narrative
+  -> Final report narrative and PDF packaging
 ```
 
 ## MVP Recommendation
@@ -102,7 +102,7 @@ If time is limited, the strongest version of this project is:
 5. Practical recommendations for a hypothetical new channel
 6. A concise methodology and limitations discussion that protects the analysis from overclaiming
 
-That combination is strong enough for an academic submission because it is aligned with the assignment, feasible within a notebook workflow, and rigorous about what the dataset can and cannot support.
+That combination is strong enough for an academic submission because it is aligned with the assignment, feasible within a checkpoint-notebook workflow, and rigorous about what the dataset can and cannot support.
 
 ## Sources
 

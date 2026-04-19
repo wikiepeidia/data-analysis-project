@@ -1,13 +1,13 @@
 # Project Research Summary
 
 **Project:** YouTube Trending Content Analysis
-**Domain:** Academic notebook/report-based data analysis
+**Domain:** Academic report-first data analysis with checkpoint notebooks
 **Researched:** 2026-04-19
 **Confidence:** HIGH
 
 ## Executive Summary
 
-This project is best treated as an academic notebook/report workflow, not a product app. The strongest approach is a local Python analysis pipeline that reads all country CSVs once, creates one canonical cleaned dataset, branches into category/timing analysis and a separate multilingual NLP layer, then ends with recommendations for a hypothetical new channel. The priority is reproducibility, explainability, and report-ready evidence.
+This project is best treated as an academic report-first workflow with checkpoint notebooks, not a product app. The strongest approach is a local Python analysis pipeline that reads all country CSVs once, creates one canonical cleaned dataset, branches into category/timing analysis and a separate multilingual NLP layer, then ends with recommendations for a hypothetical new channel and a teacher-ready Vietnamese PDF. The priority is reproducibility, explainability, and report-ready evidence.
 
 The core analytical framing should be "which patterns are associated with stronger performance inside the trending corpus," not "what causes videos to trend." Recommendations for a new channel should focus on creator-controlled inputs such as posting window, title/tag/description quality, and category focus, while engagement counts stay in the outcome layer. The main risks are duplicate videos being counted as independent samples, bad date parsing, English-only NLP on multilingual text, and promising unsupported duration analysis.
 
@@ -15,15 +15,15 @@ The core analytical framing should be "which patterns are associated with strong
 
 ### Recommended Stack
 
-Use a pandas-first Python 3.12 notebook workflow with Parquet caching and static reporting tools.
+Use a pandas-first Python 3.12 workflow with checkpoint notebooks, Parquet caching, and Markdown-friendly static reporting tools.
 
 **Core technologies:**
 - `pandas` + `pyarrow` — unify all country CSVs, normalize types, and cache cleaned/feature tables to Parquet
-- VS Code notebooks or Jupyter — interactive exploration and the main analysis workflow
+- VS Code notebooks or Jupyter — interactive exploration and checkpoint analysis workflow
 - `seaborn` + `matplotlib` — static, report-ready figures for category, timing, and comparison charts
 - `statsmodels` + `scikit-learn` — interpretable regression/factor support rather than black-box modeling
 - `spaCy` + multilingual `transformers` — metadata tone/sentiment and stronger text analysis across countries
-- Quarto — final HTML/PDF report rendering from the notebook workflow
+- Markdown or Quarto — simple report source for the final Vietnamese PDF workflow
 
 ### Expected Features
 
@@ -53,7 +53,7 @@ Build one canonical cleaned table and make every later notebook section consume 
 1. Intake and manifest — read all files safely, add country/source/encoding metadata
 2. Canonical cleaning and features — parse dates, normalize text/flags, handle duplicates, build derived variables
 3. Analysis branches — category/timing comparisons, interpretable factor support, multilingual text analysis
-4. Storytelling and output — integrate findings into recommendations, limitations, and the final notebook/report
+4. Storytelling and output — integrate findings into recommendations, limitations, and the final report PDF/source package
 
 ### Critical Pitfalls
 
@@ -85,10 +85,10 @@ Build one canonical cleaned table and make every later notebook section consume 
 **Implements:** Descriptive and factor-analysis branches.
 **Avoids:** Leakage from post-trending metrics and raw cross-country comparisons.
 
-### Phase 4: NLP, Recommendations, and Final Report
+### Phase 4: NLP, Recommendations, and Final Report Packaging
 **Rationale:** Sentiment must support the final channel advice, not sit as a disconnected appendix.
-**Delivers:** Metadata-tone or multilingual sentiment results, optional semantic grouping, recommendation table for a new channel, final notebook/report narrative.
-**Uses:** `spaCy`, multilingual `transformers`, Quarto.
+**Delivers:** Metadata-tone or multilingual sentiment results, optional semantic grouping, recommendation table for a new channel, and the final Vietnamese PDF/report narrative.
+**Uses:** `spaCy`, multilingual `transformers`, Markdown or Quarto report tooling.
 **Avoids:** English-only NLP, weak storytelling, and advice overfit to big-channel behavior.
 
 ### Phase Ordering Rationale

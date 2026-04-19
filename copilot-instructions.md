@@ -3,13 +3,14 @@
 
 **YouTube Trending Content Analysis**
 
-This is a notebook-first data analysis project for an academic assignment built around the Trending YouTube Video Statistics dataset. The project analyzes multi-country trending video data to identify what helps videos trend, compare performance across content categories, and recommend practical actions for a new channel trying to optimize views.
+This is a report-first data analysis project for an academic assignment built around the Trending YouTube Video Statistics dataset. The project analyzes multi-country trending video data to identify what helps videos trend, compare performance across content categories, and recommend practical actions for a new channel trying to optimize views. Checkpoint notebooks support exploration and verification, but the final submission target is a proper Vietnamese PDF for the teacher.
 
 **Core Value:** Produce a defensible, evidence-based analysis that answers the teacher's required questions with clear findings, visuals, and actionable recommendations.
 
 ### Constraints
 
-- **Deliverable**: Notebook/report first — the repository should optimize for an academic analysis artifact, not an application.
+- **Deliverable**: Teacher-ready Vietnamese PDF first — the repository should optimize for an academic report artifact, not an application.
+- **Formatting path**: Prefer a Markdown-friendly or Quarto-style report workflow and avoid a LaTeX-heavy export path unless there is no simpler option.
 - **Dataset**: Use all country files in the provided YouTube dataset — cross-market coverage is part of the chosen scope.
 - **Assignment**: Must answer the brief's required questions — findings and recommendations are not optional.
 - **Method**: Stronger NLP is preferred for sentiment analysis — but it must remain feasible within the dataset's available text and the assignment timeline.
@@ -24,9 +25,9 @@ This is a notebook-first data analysis project for an academic assignment built 
 | Python runtime | Python 3.12 | Single local runtime for notebooks, scripts, and report rendering | HIGH | Matches the user's preferred local install and is fully adequate for the recommended libraries. |
 | Core dataframe library | `pandas` | Read, clean, join, feature-engineer, aggregate, and export analysis tables | HIGH | This dataset size is well within pandas range, and pandas has the strongest notebook, plotting, and stats interoperability for an academic report. |
 | Columnar I/O | `pyarrow` | Fast Parquet export/import for cleaned and feature-engineered data | HIGH | The raw CSVs should be read once, normalized, then cached as Parquet so later notebooks run quickly and consistently. |
-| Notebook authoring | VS Code notebooks or `JupyterLab` | Interactive exploration, EDA, feature engineering, and model interpretation | HIGH | This project is notebook-first, so interactive iteration matters more than packaging or deployment. |
-| Final report rendering | `Quarto` | Render the final analysis as polished HTML and optionally PDF | HIGH | Quarto is the cleanest way to turn a notebook-style workflow into an academic report without rebuilding the project around slides or dashboards. |
-| Static visualization | `seaborn` + `matplotlib` | Publication-style charts for the final notebook/report | HIGH | This assignment needs readable static evidence, not a heavy interactive app. Seaborn gives fast statistical plots and matplotlib gives precise control. |
+| Notebook authoring | VS Code notebooks or `JupyterLab` | Interactive exploration, EDA, feature engineering, and model interpretation | HIGH | Checkpoint notebooks are useful for iterative analysis, but they are supporting artifacts rather than the final submission. |
+| Final report rendering | `Quarto` or Markdown-first report tooling | Render the final analysis as polished HTML and a teacher-ready Vietnamese PDF | HIGH | A Markdown-friendly report flow keeps the source simple, works well with Quarto, and avoids unnecessary LaTeX-heavy setup on Windows. |
+| Static visualization | `seaborn` + `matplotlib` | Publication-style charts for the final report PDF and checkpoint notebooks | HIGH | This assignment needs readable static evidence, not a heavy interactive app. Seaborn gives fast statistical plots and matplotlib gives precise control. |
 | Interpretable statistics | `statsmodels` | OLS and formula-based models to explain associations with views, engagement, or repeated trending appearances | HIGH | Statsmodels is better than black-box modeling when the report must explain what is associated with stronger performance. |
 | ML utilities | `scikit-learn` | Preprocessing, train/test splits, regularized models, feature importance baselines | HIGH | Useful for practical predictive support, but should remain secondary to interpretable analysis. |
 | NLP preprocessing | `spaCy` | Tokenization, normalization, lemmatization, phrase cleaning, and light linguistic preprocessing | HIGH | Stronger and more maintainable than ad hoc regex-only NLP, while still practical in notebooks. |
@@ -85,9 +86,9 @@ This is a notebook-first data analysis project for an academic assignment built 
 - `transformers`
 - `sentence-transformers` as an optional upgrade
 ## Notebook and Report Tooling
+- Markdown or Quarto source files are easier to maintain than a final notebook artifact.
 - HTML is easier to iterate on and preserves figures cleanly.
-- Quarto can render both HTML and PDF from the same source.
-- PDF output is useful for submission, but on Windows it adds TeX tooling overhead that should stay at the very end of the project.
+- Export the final Vietnamese PDF from HTML using a browser-friendly path such as Edge or Chrome print-to-PDF instead of a LaTeX-heavy workflow.
 - Use `jupytext` if you want notebooks paired with `.py` or Markdown text for version control.
 - Use Quarto report options such as table of contents and numbered sections for an academic structure.
 ## Visualization Stack
@@ -113,7 +114,7 @@ This is a notebook-first data analysis project for an academic assignment built 
 - Cleaned unified dataset: Parquet
 - Feature dataset: Parquet
 - NLP cache keyed by `video_id`: Parquet
-- Final report: Quarto HTML, plus PDF if needed
+- Final report: Markdown or Quarto source, optional HTML preview, and a final Vietnamese PDF for submission
 ## Optional Extras Worth Using Only If Needed
 | Optional Tool | Use It When | Why It Is Optional |
 |---------------|-------------|--------------------|
@@ -125,7 +126,7 @@ This is a notebook-first data analysis project for an academic assignment built 
 | Do Not Use | Why It Is a Bad Fit Here | Use Instead |
 |------------|---------------------------|-------------|
 | `Spark`, `Dask`, or a distributed compute stack | Roughly 380k rows does not justify cluster-style tooling, and it would make the project harder to explain and rerun. | `pandas` + `pyarrow` |
-| `Dash`, `Streamlit`, or a frontend dashboard stack | The assignment is notebook/report-first, so app work is scope drift. | Jupyter or VS Code notebooks + Quarto |
+| `Dash`, `Streamlit`, or a frontend dashboard stack | The assignment is report-first, so app work is scope drift. | Jupyter or VS Code notebooks for checkpoints + Markdown/Quarto for the final report |
 | `Great Expectations` or other enterprise-grade data-quality platforms | Too much setup overhead for a single academic repo and little benefit over schema checks. | `pandera` |
 | `TextBlob` or `NLTK`-only sentiment as the main NLP method | Too weak and too English-centric for a multi-country dataset if you want a stronger NLP section. | `spaCy` plus selective `transformers` inference |
 | Training custom deep learning models from scratch | Unnecessary complexity, longer runtime, and weak return for the assignment questions. | Pretrained transformer inference only where needed |
@@ -144,8 +145,8 @@ This is a notebook-first data analysis project for an academic assignment built 
 - `statsmodels`
 - `scikit-learn`
 - `pandera`
-- `jupyterlab` or VS Code notebooks
-- `quarto` CLI installed separately
+- `jupyterlab` or VS Code notebooks for checkpoints
+- `quarto` CLI installed separately for Markdown/Quarto report rendering
 - `jupytext` optional
 - `spacy`
 - `transformers`
@@ -154,9 +155,9 @@ This is a notebook-first data analysis project for an academic assignment built 
 ## Confidence Summary
 | Recommendation Area | Level | Notes |
 |---------------------|-------|-------|
-| Pandas-first local workflow | HIGH | Strongly supported by dataset size, assignment scope, and notebook/report requirements. |
+| Pandas-first local workflow | HIGH | Strongly supported by dataset size, assignment scope, and report-first requirements. |
 | PyArrow plus Parquet intermediates | HIGH | High payoff for rerun speed and reproducibility with low complexity. |
-| Jupyter or VS Code notebooks plus Quarto reporting | HIGH | Best fit for an academic notebook/report deliverable. |
+| Checkpoint notebooks plus Markdown/Quarto reporting | HIGH | Best fit for an academic workflow where the final artifact is a teacher-ready Vietnamese PDF. |
 | Seaborn plus matplotlib as the main viz layer | HIGH | Best match for static, defensible charts in a report. |
 | Statsmodels plus scikit-learn split | HIGH | Strong interpretability with optional predictive support. |
 | SpaCy plus transformers for NLP | MEDIUM | Stronger and more defensible than lexicon-only sentiment, but model/checkpoint choice still needs practical validation on this dataset. |
@@ -166,13 +167,13 @@ This is a notebook-first data analysis project for an academic assignment built 
 ## Bottom-Line Recommendation
 - Python 3.12
 - `pandas` + `pyarrow` for ingestion, cleaning, and cached Parquet datasets
-- VS Code notebooks or JupyterLab for iterative analysis
+- VS Code notebooks or JupyterLab for iterative checkpoint analysis
 - `seaborn` + `matplotlib` for the final figures
 - `statsmodels` + `scikit-learn` for interpretable factor analysis
 - `spaCy` + selective `transformers` inference for the NLP section
 - `pandera` for schema validation
 - `pip-tools` for pinned dependencies
-- `Quarto` for the final report output
+- Markdown or Quarto for the final Vietnamese report source and PDF export path
 ## Sources
 - Project scope: `.planning/PROJECT.md`
 - Existing research style and scope alignment: `.planning/research/FEATURES.md`

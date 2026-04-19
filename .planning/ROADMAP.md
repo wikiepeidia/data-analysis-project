@@ -2,7 +2,7 @@
 
 ## Overview
 
-This roadmap turns the assignment into a reproducible notebook-first analysis workflow: first establish a trustworthy multi-country dataset and defensible performance proxy, then engineer reusable features, analyze cross-country and category patterns, layer in multilingual text signals, and finish with an evidence-backed report and exportable final deliverable.
+This roadmap turns the assignment into a reproducible analysis workflow with checkpoint notebooks: first establish a trustworthy multi-country dataset and defensible performance proxy, then engineer reusable features, analyze cross-country and category patterns, layer in multilingual text signals, and finish with an evidence-backed Vietnamese PDF deliverable for the teacher.
 
 ## Phases
 
@@ -16,7 +16,7 @@ Decimal phases appear between their surrounding integers in numeric order.
 - [ ] **Phase 2: Feature Layer for Timing, Metadata, and Engagement** - Engineer the reusable variables needed for creator-input and outcome analysis.
 - [ ] **Phase 3: Cross-Country Performance & Category Analysis** - Compare timing, metadata, engagement, and categories with country-aware interpretation.
 - [ ] **Phase 4: Multilingual Text Tone Analysis** - Add sentiment or tone findings with explicit multilingual handling limits.
-- [ ] **Phase 5: Reproducible Report & Recommendation Playbook** - Deliver the final notebook/report, limitations, export, and channel advice.
+- [ ] **Phase 5: Vietnamese Final Report PDF & Recommendation Playbook** - Deliver the final Vietnamese PDF report, limitations, export workflow, and channel advice.
 
 ## Phase Details
 
@@ -35,12 +35,12 @@ Plans:
 - [x] 01-02-PLAN.md — Build the video-country snapshot table and notebook performance frame.
 
 ### Phase 2: Feature Layer for Timing, Metadata, and Engagement
-**Goal**: The notebook exposes stable timing, text-metadata, and engagement features that can support consistent cross-video analysis.
+**Goal**: The analysis workspace exposes stable timing, text-metadata, and engagement features that can support consistent cross-video analysis.
 **Depends on**: Phase 1
 **Requirements**: FACT-01, FACT-02, FACT-03
 **Success Criteria** (what must be TRUE):
   1. Publish-time and trend-lag features are available for every supported analysis row or video unit.
-  2. Title, description, and tag-derived metadata fields are engineered with documented definitions that can be inspected in the notebook.
+  2. Title, description, and tag-derived metadata fields are engineered with documented definitions that can be inspected in checkpoint notebooks or the report source.
   3. Engagement counts are transformed into comparable metrics or ratios suitable for cross-video comparison.
   4. Downstream analysis sections can reuse one stable feature set instead of recalculating ad hoc columns.
 **Plans**: TBD
@@ -50,7 +50,7 @@ Plans:
 **Depends on**: Phase 2
 **Requirements**: FACT-04, CAT-01, CAT-02
 **Success Criteria** (what must be TRUE):
-  1. The notebook presents interpretable tables or visuals linking timing, metadata, and engagement structure to the chosen trending-performance proxy.
+  1. The analysis checkpoints and report draft present interpretable tables or visuals linking timing, metadata, and engagement structure to the chosen trending-performance proxy.
   2. Content categories are compared on performance, engagement, and prevalence rather than on raw popularity alone.
   3. Country-normalized or country-stratified comparisons are shown before any pooled category conclusion is stated.
   4. A reviewer can see where cross-country patterns are consistent and where market-specific differences remain important.
@@ -62,19 +62,19 @@ Plans:
 **Requirements**: NLP-01, NLP-02
 **Success Criteria** (what must be TRUE):
   1. Tags and descriptions receive a baseline sentiment or tone analysis that can be inspected alongside other findings.
-  2. The notebook explicitly states which languages are supported or how multilingual-aware processing is applied before showing cross-country text conclusions.
+  2. The checkpoint notebooks and final report explicitly state which languages are supported or how multilingual-aware processing is applied before showing cross-country text conclusions.
   3. Any reported cross-country sentiment findings are limited to supported-language handling rather than implied as universally reliable.
 **Plans**: TBD
 
-### Phase 5: Reproducible Report & Recommendation Playbook
-**Goal**: The assignment is delivered as a reproducible notebook/report with evidence-backed recommendations, explicit limitations, and a presentation-ready export.
+### Phase 5: Vietnamese Final Report PDF & Recommendation Playbook
+**Goal**: The assignment is delivered as a reproducible, teacher-ready Vietnamese PDF with evidence-backed recommendations, explicit limitations, and a clean export workflow.
 **Depends on**: Phase 3, Phase 4
 **Requirements**: REPT-01, REPT-02, REPT-03, REPT-04
 **Success Criteria** (what must be TRUE):
-  1. The final notebook/report answers the teacher's required questions using evidence from the completed analysis phases.
+  1. The final Vietnamese PDF answers the teacher's required questions using evidence from the completed analysis phases.
   2. A recommendation playbook translates the findings into specific guidance for a new YouTube channel.
   3. The report includes a limitations section covering trending-only bias, correlation limits, multilingual caveats, and missing duration data.
-  4. The analysis can be rerun with stable saved outputs and exported to presentation-ready HTML or PDF.
+  4. The analysis can be rerun with stable saved outputs and exported to a teacher-ready Vietnamese PDF without depending on a LaTeX-heavy workflow.
 **Plans**: TBD
 
 ## Progress
@@ -88,4 +88,4 @@ Phases execute in numeric order: 1 -> 2 -> 3 -> 4 -> 5
 | 2. Feature Layer for Timing, Metadata, and Engagement | 0/TBD | Not started | - |
 | 3. Cross-Country Performance & Category Analysis | 0/TBD | Not started | - |
 | 4. Multilingual Text Tone Analysis | 0/TBD | Not started | - |
-| 5. Reproducible Report & Recommendation Playbook | 0/TBD | Not started | - |
+| 5. Vietnamese Final Report PDF & Recommendation Playbook | 0/TBD | Not started | - |

@@ -2,13 +2,13 @@
 
 **Project:** YouTube Trending Content Analysis
 **Researched:** 2026-04-19
-**Scope:** All country CSV files in `data/`; deliverable is a notebook/report, not a frontend app
-**Overall recommendation:** Use a pandas-first local Python workflow with Jupyter or VS Code notebooks for exploration, Quarto for the final report, PyArrow/Parquet for cleaned intermediates, seaborn/matplotlib for core visuals, statsmodels plus scikit-learn for interpretable analysis, and spaCy plus selective Hugging Face inference for the NLP section.
+**Scope:** All country CSV files in `data/`; final deliverable is a teacher-ready Vietnamese PDF report, with notebooks kept as checkpoints rather than the submission artifact
+**Overall recommendation:** Use a pandas-first local Python workflow with Jupyter or VS Code notebooks for exploration, Markdown or Quarto for the final report source, browser-friendly HTML-to-PDF export for the final Vietnamese PDF, PyArrow/Parquet for cleaned intermediates, seaborn/matplotlib for core visuals, statsmodels plus scikit-learn for interpretable analysis, and spaCy plus selective Hugging Face inference for the NLP section.
 **Confidence:** HIGH for the core stack, MEDIUM for optional NLP upgrades and optional performance extras
 
 This project does not need a big-data stack. The repository holds about 380k rows across 10 CSV files, which is large enough to benefit from careful typing and Parquet caching, but still small enough for a single-machine notebook workflow. The correct tradeoff is clarity and reproducibility, not infrastructure.
 
-The stack should also reflect the assignment's real constraints. This is an academic notebook/report submission, not an analytics product. That means the most important choices are the ones that make the analysis explainable, fast to rerun, easy to visualize, and easy to defend in writing.
+The stack should also reflect the assignment's real constraints. This is an academic report-first submission with checkpoint notebooks, not an analytics product. That means the most important choices are the ones that make the analysis explainable, fast to rerun, easy to visualize, easy to defend in writing, and easy to package as a teacher-ready Vietnamese PDF without LaTeX pain.
 
 ## Recommended Stack
 
@@ -17,9 +17,9 @@ The stack should also reflect the assignment's real constraints. This is an acad
 | Python runtime | Python 3.12 | Single local runtime for notebooks, scripts, and report rendering | HIGH | Matches the user's preferred local install and is fully adequate for the recommended libraries. |
 | Core dataframe library | `pandas` | Read, clean, join, feature-engineer, aggregate, and export analysis tables | HIGH | This dataset size is well within pandas range, and pandas has the strongest notebook, plotting, and stats interoperability for an academic report. |
 | Columnar I/O | `pyarrow` | Fast Parquet export/import for cleaned and feature-engineered data | HIGH | The raw CSVs should be read once, normalized, then cached as Parquet so later notebooks run quickly and consistently. |
-| Notebook authoring | VS Code notebooks or `JupyterLab` | Interactive exploration, EDA, feature engineering, and model interpretation | HIGH | This project is notebook-first, so interactive iteration matters more than packaging or deployment. |
-| Final report rendering | `Quarto` | Render the final analysis as polished HTML and optionally PDF | HIGH | Quarto is the cleanest way to turn a notebook-style workflow into an academic report without rebuilding the project around slides or dashboards. |
-| Static visualization | `seaborn` + `matplotlib` | Publication-style charts for the final notebook/report | HIGH | This assignment needs readable static evidence, not a heavy interactive app. Seaborn gives fast statistical plots and matplotlib gives precise control. |
+| Notebook authoring | VS Code notebooks or `JupyterLab` | Interactive exploration, EDA, feature engineering, and model interpretation | HIGH | Checkpoint notebooks are useful for iterative analysis, but they are supporting artifacts rather than the final submission. |
+| Final report rendering | `Quarto` or Markdown-first report tooling | Render the final analysis as polished HTML and a teacher-ready Vietnamese PDF | HIGH | A Markdown-friendly report flow keeps the source simple, works well with Quarto, and avoids unnecessary LaTeX-heavy setup on Windows. |
+| Static visualization | `seaborn` + `matplotlib` | Publication-style charts for the final report PDF and checkpoint notebooks | HIGH | This assignment needs readable static evidence, not a heavy interactive app. Seaborn gives fast statistical plots and matplotlib gives precise control. |
 | Interpretable statistics | `statsmodels` | OLS and formula-based models to explain associations with views, engagement, or repeated trending appearances | HIGH | Statsmodels is better than black-box modeling when the report must explain what is associated with stronger performance. |
 | ML utilities | `scikit-learn` | Preprocessing, train/test splits, regularized models, feature importance baselines | HIGH | Useful for practical predictive support, but should remain secondary to interpretable analysis. |
 | NLP preprocessing | `spaCy` | Tokenization, normalization, lemmatization, phrase cleaning, and light linguistic preprocessing | HIGH | Stronger and more maintainable than ad hoc regex-only NLP, while still practical in notebooks. |
@@ -118,13 +118,13 @@ Recommended tools here:
 Use this workflow:
 1. Author exploratory and cleaning work in VS Code notebooks or JupyterLab.
 2. Save cleaned and feature-engineered datasets to Parquet.
-3. Write the final narrative report in Quarto, either from a `.qmd` file or by rendering a polished notebook.
-4. Export HTML first, then PDF only if the course specifically needs PDF.
+3. Write the final narrative report in Markdown or Quarto, ideally from a `.qmd` or `.md` source file that is easier to maintain than a final notebook.
+4. Render HTML, then export the teacher-ready Vietnamese PDF from HTML using a browser-friendly path such as Edge or Chrome print-to-PDF rather than a LaTeX-heavy toolchain.
 
 Why this is the right workflow:
+- Markdown or Quarto source files are easier to maintain than a final notebook artifact.
 - HTML is easier to iterate on and preserves figures cleanly.
-- Quarto can render both HTML and PDF from the same source.
-- PDF output is useful for submission, but on Windows it adds TeX tooling overhead that should stay at the very end of the project.
+- Browser-based PDF export avoids TeX or LaTeX setup pain on Windows while still producing a teacher-ready submission.
 
 Optional but useful:
 - Use `jupytext` if you want notebooks paired with `.py` or Markdown text for version control.
@@ -177,7 +177,7 @@ Recommended repository outputs:
 - Cleaned unified dataset: Parquet
 - Feature dataset: Parquet
 - NLP cache keyed by `video_id`: Parquet
-- Final report: Quarto HTML, plus PDF if needed
+- Final report: Markdown or Quarto source, optional HTML preview, and a final Vietnamese PDF for submission
 
 ## Optional Extras Worth Using Only If Needed
 
@@ -193,7 +193,7 @@ Recommended repository outputs:
 | Do Not Use | Why It Is a Bad Fit Here | Use Instead |
 |------------|---------------------------|-------------|
 | `Spark`, `Dask`, or a distributed compute stack | Roughly 380k rows does not justify cluster-style tooling, and it would make the project harder to explain and rerun. | `pandas` + `pyarrow` |
-| `Dash`, `Streamlit`, or a frontend dashboard stack | The assignment is notebook/report-first, so app work is scope drift. | Jupyter or VS Code notebooks + Quarto |
+| `Dash`, `Streamlit`, or a frontend dashboard stack | The assignment is report-first, so app work is scope drift. | Jupyter or VS Code notebooks for checkpoints + Markdown/Quarto for the final report |
 | `Great Expectations` or other enterprise-grade data-quality platforms | Too much setup overhead for a single academic repo and little benefit over schema checks. | `pandera` |
 | `TextBlob` or `NLTK`-only sentiment as the main NLP method | Too weak and too English-centric for a multi-country dataset if you want a stronger NLP section. | `spaCy` plus selective `transformers` inference |
 | Training custom deep learning models from scratch | Unnecessary complexity, longer runtime, and weak return for the assignment questions. | Pretrained transformer inference only where needed |
@@ -221,7 +221,7 @@ For this repo, the correct approach is:
 - `scikit-learn`
 - `pandera`
 
-**Notebook/report packages and tools**
+**Checkpoint notebook and report packages/tools**
 - `jupyterlab` or VS Code notebooks
 - `quarto` CLI installed separately
 - `jupytext` optional
@@ -238,9 +238,9 @@ For this repo, the correct approach is:
 
 | Recommendation Area | Level | Notes |
 |---------------------|-------|-------|
-| Pandas-first local workflow | HIGH | Strongly supported by dataset size, assignment scope, and notebook/report requirements. |
+| Pandas-first local workflow | HIGH | Strongly supported by dataset size, assignment scope, and report-first requirements. |
 | PyArrow plus Parquet intermediates | HIGH | High payoff for rerun speed and reproducibility with low complexity. |
-| Jupyter or VS Code notebooks plus Quarto reporting | HIGH | Best fit for an academic notebook/report deliverable. |
+| Checkpoint notebooks plus Markdown/Quarto reporting | HIGH | Best fit for an academic workflow where the final artifact is a teacher-ready Vietnamese PDF. |
 | Seaborn plus matplotlib as the main viz layer | HIGH | Best match for static, defensible charts in a report. |
 | Statsmodels plus scikit-learn split | HIGH | Strong interpretability with optional predictive support. |
 | SpaCy plus transformers for NLP | MEDIUM | Stronger and more defensible than lexicon-only sentiment, but model/checkpoint choice still needs practical validation on this dataset. |
@@ -253,13 +253,13 @@ For this repo, the correct approach is:
 If this project were being started today, I would build it with:
 - Python 3.12
 - `pandas` + `pyarrow` for ingestion, cleaning, and cached Parquet datasets
-- VS Code notebooks or JupyterLab for iterative analysis
+- VS Code notebooks or JupyterLab for iterative checkpoint analysis
 - `seaborn` + `matplotlib` for the final figures
 - `statsmodels` + `scikit-learn` for interpretable factor analysis
 - `spaCy` + selective `transformers` inference for the NLP section
 - `pandera` for schema validation
 - `pip-tools` for pinned dependencies
-- `Quarto` for the final report output
+- Markdown or Quarto for the final Vietnamese report source and PDF export path
 
 That stack is the best balance of assignment-fit, analytical rigor, reproducibility, and practical execution speed for this specific repository.
 

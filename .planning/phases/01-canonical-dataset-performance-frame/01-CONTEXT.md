@@ -59,7 +59,7 @@ No product-style references were requested. The discussion prioritized auditabil
 
 ### Assignment and scope
 - `project.md` — Original assignment brief, including the YouTube project requirements and teacher question.
-- `.planning/PROJECT.md` — Chosen project scope, all-country coverage, notebook-first constraint, and core value.
+- `.planning/PROJECT.md` — Chosen project scope, all-country coverage, report-first delivery constraint, and core value.
 - `.planning/REQUIREMENTS.md` — Phase 1 requirements `DATA-01` to `DATA-03` and global project constraints.
 
 ### Phase framing and research guardrails
@@ -82,7 +82,7 @@ No product-style references were requested. The discussion prioritized auditabil
 - No category-label mapping file was found in `data/`, so Phase 1 should not assume human-readable category labels are already available in-repo.
 
 ### Integration Points
-- Phase 1 should read from `data/*.csv` and produce the canonical dataset contract that later notebook/report work will consume.
+- Phase 1 should read from `data/*.csv` and produce the canonical dataset contract that later checkpoint notebooks and final report work will consume.
 - Later phases depend on the video-level default unit, trend-day-count proxy, country-aware temporal fields, and raw-plus-normalized text strategy established here.
 
 </code_context>

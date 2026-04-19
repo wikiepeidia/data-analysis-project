@@ -1,7 +1,7 @@
 # Domain Pitfalls
 
 **Domain:** Academic multi-country YouTube trending analysis
-**Project:** Trending YouTube Video Statistics notebook/report
+**Project:** Trending YouTube Video Statistics report-first workflow with checkpoint notebooks
 **Researched:** 2026-04-19
 **Overall confidence:** HIGH for dataset-structure pitfalls, MEDIUM for NLP-interpretation pitfalls
 
@@ -12,7 +12,7 @@ To make the warnings actionable before a roadmap exists, the pitfalls below refe
 - **Phase 1 - Research Design and Scope Lock:** define the exact questions the notebook can answer with this dataset.
 - **Phase 2 - Cleaning and Standardization:** parse dates, clean text, deduplicate, and create analysis-ready tables.
 - **Phase 3 - Comparative Analysis and NLP:** run category, country, timing, and text analyses with clear assumptions.
-- **Phase 4 - Recommendations and Final Storytelling:** turn findings into defensible advice for a new channel.
+- **Phase 4 - Recommendations and Final Storytelling:** turn findings into defensible advice for a new channel and package them for the final Vietnamese PDF.
 
 ## Critical Pitfalls
 

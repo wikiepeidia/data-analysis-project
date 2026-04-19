@@ -82,7 +82,7 @@ The smallest reliable repo structure for this phase is:
 - `tests/test_phase1_notebook_contract.py` — notebook contract checks
 - `notebooks/01_canonical_dataset.ipynb` — notebook deliverable for Phase 1 narrative and regeneration path
 
-This keeps the project notebook-first while still moving the brittle parsing logic into importable Python modules that can be tested.
+This keeps checkpoint notebooks available for Phase 1 validation while still moving the brittle parsing logic into importable Python modules that can be tested.
 
 ## Risks to Plan Around
 

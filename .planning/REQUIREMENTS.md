@@ -32,8 +32,8 @@
 
 - [ ] **REPT-01**: Produce a recommendation playbook for a new YouTube channel based on the observed analysis.
 - [ ] **REPT-02**: Include a limitations section covering trending-only bias, correlation limits, multilingual caveats, and missing duration data.
-- [ ] **REPT-03**: Deliver the analysis in a reproducible notebook/report structure with stable saved outputs.
-- [ ] **REPT-04**: Export the final report to a presentation-ready HTML or PDF format.
+- [ ] **REPT-03**: Deliver the analysis in a reproducible Markdown-friendly report structure with stable saved outputs, while keeping notebooks as checkpoints rather than the final submission.
+- [ ] **REPT-04**: Export the final report as a teacher-ready Vietnamese PDF using a simple workflow that avoids LaTeX-heavy tooling where possible.
 
 ## v2 Requirements
 
@@ -57,10 +57,11 @@
 
 | Feature | Reason |
 |---------|--------|
-| Frontend dashboard or web app | The assignment is notebook/report-first, and UI work would dilute analysis quality. |
+| Frontend dashboard or web app | The assignment is report-first, and UI work would dilute analysis quality. |
 | Live YouTube API enrichment or scraping | Changes scope, reduces reproducibility, and is not required to answer the assignment questions. |
 | Causal claims about what makes videos trend | The dataset is observational and trending-only, so causal conclusions would be invalid. |
 | Video-length analysis without a duration enrichment phase | Duration is not present in the current dataset schema, so promising it now would be misleading. |
+| LaTeX-heavy report workflow | The user wants a simpler teacher-submission path, and Windows PDF pipelines built around LaTeX add avoidable friction. |
 
 ## Traceability
 
