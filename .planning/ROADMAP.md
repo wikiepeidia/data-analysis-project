@@ -29,7 +29,10 @@ Decimal phases appear between their surrounding integers in numeric order.
   2. Dates, text fields, booleans, missing values, and repeated trending observations are standardized so later sections reuse the same clean definitions.
   3. The report states a clear trending-performance proxy and explains why it is valid for a trending-only dataset.
   4. The cleaned analysis table can be regenerated end-to-end without manual spreadsheet edits.
-**Plans**: TBD
+**Plans**: 2 plans
+Plans:
+- [ ] 01-01-PLAN.md — Build the row-level canonical dataset pipeline and validation harness.
+- [ ] 01-02-PLAN.md — Build the video-country snapshot table and notebook performance frame.
 
 ### Phase 2: Feature Layer for Timing, Metadata, and Engagement
 **Goal**: The notebook exposes stable timing, text-metadata, and engagement features that can support consistent cross-video analysis.
@@ -81,7 +84,7 @@ Phases execute in numeric order: 1 -> 2 -> 3 -> 4 -> 5
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. Canonical Dataset & Performance Frame | 0/TBD | Not started | - |
+| 1. Canonical Dataset & Performance Frame | 0/2 | Planned | - |
 | 2. Feature Layer for Timing, Metadata, and Engagement | 0/TBD | Not started | - |
 | 3. Cross-Country Performance & Category Analysis | 0/TBD | Not started | - |
 | 4. Multilingual Text Tone Analysis | 0/TBD | Not started | - |
