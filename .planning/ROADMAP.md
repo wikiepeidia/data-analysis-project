@@ -12,7 +12,7 @@ This roadmap turns the assignment into a reproducible notebook-first analysis wo
 
 Decimal phases appear between their surrounding integers in numeric order.
 
-- [ ] **Phase 1: Canonical Dataset & Performance Frame** - Build one clean multi-country analysis base and define a defensible trending-performance proxy.
+- [x] **Phase 1: Canonical Dataset & Performance Frame** - Build one clean multi-country analysis base and define a defensible trending-performance proxy.
 - [ ] **Phase 2: Feature Layer for Timing, Metadata, and Engagement** - Engineer the reusable variables needed for creator-input and outcome analysis.
 - [ ] **Phase 3: Cross-Country Performance & Category Analysis** - Compare timing, metadata, engagement, and categories with country-aware interpretation.
 - [ ] **Phase 4: Multilingual Text Tone Analysis** - Add sentiment or tone findings with explicit multilingual handling limits.
@@ -32,7 +32,7 @@ Decimal phases appear between their surrounding integers in numeric order.
 **Plans**: 2 plans
 Plans:
 - [x] 01-01-PLAN.md — Build the row-level canonical dataset pipeline and validation harness.
-- [ ] 01-02-PLAN.md — Build the video-country snapshot table and notebook performance frame.
+- [x] 01-02-PLAN.md — Build the video-country snapshot table and notebook performance frame.
 
 ### Phase 2: Feature Layer for Timing, Metadata, and Engagement
 **Goal**: The notebook exposes stable timing, text-metadata, and engagement features that can support consistent cross-video analysis.
@@ -84,7 +84,7 @@ Phases execute in numeric order: 1 -> 2 -> 3 -> 4 -> 5
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. Canonical Dataset & Performance Frame | 1/2 | In Progress|  |
+| 1. Canonical Dataset & Performance Frame | 2/2 | Complete | 2026-04-19 |
 | 2. Feature Layer for Timing, Metadata, and Engagement | 0/TBD | Not started | - |
 | 3. Cross-Country Performance & Category Analysis | 0/TBD | Not started | - |
 | 4. Multilingual Text Tone Analysis | 0/TBD | Not started | - |
