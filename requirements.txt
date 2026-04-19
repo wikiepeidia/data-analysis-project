@@ -1,0 +1,6 @@
+pandas
+pyarrow
+pandera
+pytest
+jupyterlab
+ipykernel
