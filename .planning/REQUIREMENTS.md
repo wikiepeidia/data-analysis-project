@@ -7,8 +7,8 @@
 
 ### Data Foundation
 
-- [ ] **DATA-01**: Combine all country CSV files into one harmonized dataset with source-country metadata.
-- [ ] **DATA-02**: Clean and standardize dates, text fields, booleans, missing values, and duplicate trending rows into an analysis-ready dataset.
+- [x] **DATA-01**: Combine all country CSV files into one harmonized dataset with source-country metadata.
+- [x] **DATA-02**: Clean and standardize dates, text fields, booleans, missing values, and duplicate trending rows into an analysis-ready dataset.
 - [ ] **DATA-03**: Define and document a valid trending-performance proxy for this trending-only dataset.
 
 ### Factor Analysis
@@ -66,8 +66,8 @@
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| DATA-01 | Phase 1 | Pending |
-| DATA-02 | Phase 1 | Pending |
+| DATA-01 | Phase 1 | Complete |
+| DATA-02 | Phase 1 | Complete |
 | DATA-03 | Phase 1 | Pending |
 | FACT-01 | Phase 2 | Pending |
 | FACT-02 | Phase 2 | Pending |

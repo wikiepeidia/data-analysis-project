@@ -31,7 +31,7 @@ Decimal phases appear between their surrounding integers in numeric order.
   4. The cleaned analysis table can be regenerated end-to-end without manual spreadsheet edits.
 **Plans**: 2 plans
 Plans:
-- [ ] 01-01-PLAN.md — Build the row-level canonical dataset pipeline and validation harness.
+- [x] 01-01-PLAN.md — Build the row-level canonical dataset pipeline and validation harness.
 - [ ] 01-02-PLAN.md — Build the video-country snapshot table and notebook performance frame.
 
 ### Phase 2: Feature Layer for Timing, Metadata, and Engagement
@@ -84,7 +84,7 @@ Phases execute in numeric order: 1 -> 2 -> 3 -> 4 -> 5
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. Canonical Dataset & Performance Frame | 0/2 | Planned | - |
+| 1. Canonical Dataset & Performance Frame | 1/2 | In Progress|  |
 | 2. Feature Layer for Timing, Metadata, and Engagement | 0/TBD | Not started | - |
 | 3. Cross-Country Performance & Category Analysis | 0/TBD | Not started | - |
 | 4. Multilingual Text Tone Analysis | 0/TBD | Not started | - |
