@@ -13,27 +13,27 @@
 
 ### Factor Analysis
 
-- [ ] **FACT-01**: Engineer publish-time and trend-lag features for timing analysis.
-- [ ] **FACT-02**: Engineer title, description, and tag-based metadata features for analysis.
-- [ ] **FACT-03**: Compute engagement metrics and ratios suitable for cross-video comparison.
-- [ ] **FACT-04**: Analyze associations between timing, metadata, engagement structure, and trending performance using interpretable methods and visuals.
+- [x] **FACT-01**: Engineer publish-time and trend-lag features for timing analysis.
+- [x] **FACT-02**: Engineer title, description, and tag-based metadata features for analysis.
+- [x] **FACT-03**: Compute engagement metrics and ratios suitable for cross-video comparison.
+- [x] **FACT-04**: Analyze associations between timing, metadata, engagement structure, and trending performance using interpretable methods and visuals.
 
 ### Category Analysis
 
-- [ ] **CAT-01**: Compare content categories on performance, engagement, and prevalence.
-- [ ] **CAT-02**: Normalize or stratify category comparisons by country before pooled conclusions are made.
+- [x] **CAT-01**: Compare content categories on performance, engagement, and prevalence.
+- [x] **CAT-02**: Normalize or stratify category comparisons by country before pooled conclusions are made.
 
 ### NLP
 
-- [ ] **NLP-01**: Perform baseline sentiment or tone analysis on tags and descriptions.
-- [ ] **NLP-02**: Apply multilingual-aware text handling or explicitly document supported-language limits before reporting cross-country sentiment findings.
+- [x] **NLP-01**: Perform baseline sentiment or tone analysis on tags and descriptions.
+- [x] **NLP-02**: Apply multilingual-aware text handling or explicitly document supported-language limits before reporting cross-country sentiment findings.
 
 ### Final Delivery
 
-- [ ] **REPT-01**: Produce a recommendation playbook for a new YouTube channel based on the observed analysis.
-- [ ] **REPT-02**: Include a limitations section covering trending-only bias, correlation limits, multilingual caveats, and missing duration data.
-- [ ] **REPT-03**: Deliver the analysis in a reproducible Markdown-friendly report structure with stable saved outputs, while keeping notebooks as checkpoints rather than the final submission.
-- [ ] **REPT-04**: Export the final report as a teacher-ready Vietnamese PDF using a simple workflow that avoids LaTeX-heavy tooling where possible.
+- [x] **REPT-01**: Produce a recommendation playbook for a new YouTube channel based on the observed analysis.
+- [x] **REPT-02**: Include a limitations section covering trending-only bias, correlation limits, multilingual caveats, and missing duration data.
+- [x] **REPT-03**: Deliver the analysis in a reproducible Markdown-friendly report structure with stable saved outputs, while keeping Markdown checkpoints as the supporting artifact.
+- [x] **REPT-04**: Export the final report as a teacher-ready Vietnamese PDF using a simple workflow that avoids LaTeX-heavy tooling where possible.
 
 ## v2 Requirements
 
@@ -70,24 +70,25 @@
 | DATA-01 | Phase 1 | Complete |
 | DATA-02 | Phase 1 | Complete |
 | DATA-03 | Phase 1 | Complete |
-| FACT-01 | Phase 2 | Pending |
-| FACT-02 | Phase 2 | Pending |
-| FACT-03 | Phase 2 | Pending |
-| FACT-04 | Phase 3 | Pending |
-| CAT-01 | Phase 3 | Pending |
-| CAT-02 | Phase 3 | Pending |
-| NLP-01 | Phase 4 | Pending |
-| NLP-02 | Phase 4 | Pending |
-| REPT-01 | Phase 5 | Pending |
-| REPT-02 | Phase 5 | Pending |
-| REPT-03 | Phase 5 | Pending |
-| REPT-04 | Phase 5 | Pending |
+| FACT-01 | Phase 2 | Complete |
+| FACT-02 | Phase 2 | Complete |
+| FACT-03 | Phase 2 | Complete |
+| FACT-04 | Phase 3 | Complete |
+| CAT-01 | Phase 3 | Complete |
+| CAT-02 | Phase 3 | Complete |
+| NLP-01 | Phase 4 | Complete |
+| NLP-02 | Phase 4 | Complete |
+| REPT-01 | Phase 5 | Complete |
+| REPT-02 | Phase 5 | Complete |
+| REPT-03 | Phase 5 | Complete |
+| REPT-04 | Phase 5 | Complete |
 
 **Coverage:**
+
 - v1 requirements: 15 total
 - Mapped to phases: 15
 - Unmapped: 0
 
 ---
 *Requirements defined: 2026-04-19*
-*Last updated: 2026-04-19 after Phase 1 completion*
+*Last updated: 2026-04-20 after Phase 5 completion*

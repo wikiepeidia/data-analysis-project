@@ -1,13 +1,13 @@
 # Project Research Summary
 
 **Project:** YouTube Trending Content Analysis
-**Domain:** Academic report-first data analysis with checkpoint notebooks
+**Domain:** Academic report-first data analysis with Markdown checkpoints
 **Researched:** 2026-04-19
 **Confidence:** HIGH
 
 ## Executive Summary
 
-This project is best treated as an academic report-first workflow with checkpoint notebooks, not a product app. The strongest approach is a local Python analysis pipeline that reads all country CSVs once, creates one canonical cleaned dataset, branches into category/timing analysis and a separate multilingual NLP layer, then ends with recommendations for a hypothetical new channel and a teacher-ready Vietnamese PDF. The priority is reproducibility, explainability, and report-ready evidence.
+This project is best treated as an academic report-first workflow with Markdown checkpoints, not a product app. The strongest approach is a local Python analysis pipeline that reads all country CSVs once, creates one canonical cleaned dataset, branches into category/timing analysis and a separate multilingual NLP layer, then ends with recommendations for a hypothetical new channel and a teacher-ready Vietnamese PDF. The priority is reproducibility, explainability, and report-ready evidence.
 
 The core analytical framing should be "which patterns are associated with stronger performance inside the trending corpus," not "what causes videos to trend." Recommendations for a new channel should focus on creator-controlled inputs such as posting window, title/tag/description quality, and category focus, while engagement counts stay in the outcome layer. The main risks are duplicate videos being counted as independent samples, bad date parsing, English-only NLP on multilingual text, and promising unsupported duration analysis.
 
@@ -15,11 +15,12 @@ The core analytical framing should be "which patterns are associated with strong
 
 ### Recommended Stack
 
-Use a pandas-first Python 3.12 workflow with checkpoint notebooks, Parquet caching, and Markdown-friendly static reporting tools.
+Use a pandas-first Python 3.12 workflow with Markdown checkpoints, Parquet caching, and Markdown-friendly static reporting tools.
 
 **Core technologies:**
+
 - `pandas` + `pyarrow` — unify all country CSVs, normalize types, and cache cleaned/feature tables to Parquet
-- VS Code notebooks or Jupyter — interactive exploration and checkpoint analysis workflow
+- Plain Python scripts/modules plus Markdown checkpoints — low-friction exploration and checkpoint analysis workflow
 - `seaborn` + `matplotlib` — static, report-ready figures for category, timing, and comparison charts
 - `statsmodels` + `scikit-learn` — interpretable regression/factor support rather than black-box modeling
 - `spaCy` + multilingual `transformers` — metadata tone/sentiment and stronger text analysis across countries
@@ -28,6 +29,7 @@ Use a pandas-first Python 3.12 workflow with checkpoint notebooks, Parquet cachi
 ### Expected Features
 
 **Must have (table stakes):**
+
 - Multi-country ingestion with country/source metadata for every CSV
 - Canonical cleaning for encodings, `trending_date`, `publish_time`, booleans, missing text, and duplicate handling
 - Feature engineering for timing, text length, tag count, engagement ratios, and category/country fields
@@ -36,20 +38,23 @@ Use a pandas-first Python 3.12 workflow with checkpoint notebooks, Parquet cachi
 - Final recommendations for a new channel plus a limitations section
 
 **Should have (differentiators):**
+
 - Unique-video versus row-level robustness checks
 - Country-normalized comparisons before pooled conclusions
 - Semantic clustering or stronger multilingual NLP if baseline sentiment is weak
 
 **Defer (v2+ / out of scope):**
+
 - Frontend dashboard or web app
 - YouTube API enrichment unless duration becomes mandatory and feasible
 - Heavy deep-learning/custom models or generic EDA not tied to assignment questions
 
 ### Architecture Approach
 
-Build one canonical cleaned table and make every later notebook section consume it instead of re-reading raw CSVs. After feature engineering, branch into aligned analysis tracks so category comparisons, timing patterns, and NLP all use the same definitions.
+Build one canonical cleaned table and make every later checkpoint section consume it instead of re-reading raw CSVs. After feature engineering, branch into aligned analysis tracks so category comparisons, timing patterns, and NLP all use the same definitions.
 
 **Major components:**
+
 1. Intake and manifest — read all files safely, add country/source/encoding metadata
 2. Canonical cleaning and features — parse dates, normalize text/flags, handle duplicates, build derived variables
 3. Analysis branches — category/timing comparisons, interpretable factor support, multilingual text analysis
@@ -67,18 +72,21 @@ Build one canonical cleaned table and make every later notebook section consume 
 ## Implications for Roadmap
 
 ### Phase 1: Scope Lock and Feasibility
+
 **Rationale:** Avoid invalid claims before implementation starts.
 **Delivers:** Final question framing, unit of analysis, category-label plan, duration decision, NLP scope.
 **Addresses:** Assignment-fit analysis, limitations, recommendation guardrails.
 **Avoids:** Causal overclaiming and missing-duration scope failure.
 
 ### Phase 2: Canonical Data Foundation
+
 **Rationale:** Every later section depends on identical parsing and cleaning.
 **Delivers:** Intake manifest, unified cleaned dataset, deduplicated analysis table, feature table, Parquet caches.
 **Uses:** `pandas`, `pyarrow`, `pandera`.
 **Avoids:** Duplicate bias, date bugs, placeholder-text pollution, guessed category labels.
 
 ### Phase 3: Core Comparative Analysis
+
 **Rationale:** Answer the required assignment questions before optional upgrades.
 **Delivers:** Timing analysis, category comparisons, country-normalized summaries, interpretable visuals, preliminary recommendation signals.
 **Uses:** `seaborn`, `matplotlib`, `statsmodels`.
@@ -86,6 +94,7 @@ Build one canonical cleaned table and make every later notebook section consume 
 **Avoids:** Leakage from post-trending metrics and raw cross-country comparisons.
 
 ### Phase 4: NLP, Recommendations, and Final Report Packaging
+
 **Rationale:** Sentiment must support the final channel advice, not sit as a disconnected appendix.
 **Delivers:** Metadata-tone or multilingual sentiment results, optional semantic grouping, recommendation table for a new channel, and the final Vietnamese PDF/report narrative.
 **Uses:** `spaCy`, multilingual `transformers`, Markdown or Quarto report tooling.
@@ -100,11 +109,13 @@ Build one canonical cleaned table and make every later notebook section consume 
 ### Research Flags
 
 Phases likely needing deeper research during planning:
+
 - **Phase 1:** Confirm category label source and whether duration remains a documented limitation
 - **Phase 4:** Choose and validate a multilingual sentiment model or fallback metadata-tone method
 
 Phases with standard patterns (skip research-phase):
-- **Phase 2:** Standard pandas/Parquet notebook workflow
+
+- **Phase 2:** Standard pandas/Parquet script-and-Markdown workflow
 - **Phase 3:** Standard grouped analysis and interpretable modeling patterns
 
 ## Confidence Assessment
@@ -113,7 +124,7 @@ Phases with standard patterns (skip research-phase):
 |------|------------|-------|
 | Stack | HIGH | Strong fit for dataset size, academic workflow, and deliverable |
 | Features | HIGH | Closely aligned with assignment requirements and repo scope |
-| Architecture | HIGH | Canonical-dataset-first workflow is appropriate for notebook analysis |
+| Architecture | HIGH | Canonical-dataset-first workflow is appropriate for text-first analysis |
 | Pitfalls | HIGH | Driven by observed dataset structure and assignment mismatch risks |
 
 **Overall confidence:** HIGH
@@ -127,6 +138,7 @@ Phases with standard patterns (skip research-phase):
 ## Sources
 
 ### Primary
+
 - `.planning/research/STACK.md`
 - `.planning/research/FEATURES.md`
 - `.planning/research/ARCHITECTURE.md`

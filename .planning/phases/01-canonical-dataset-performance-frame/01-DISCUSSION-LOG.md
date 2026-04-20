@@ -93,7 +93,7 @@
 | You decide | Let the planner choose the naming convention. | |
 
 **User's choice:** Very explicit
-**Notes:** Proxy validity and limits should stay visible throughout the notebook.
+**Notes:** Proxy validity and limits should stay visible throughout the Markdown checkpoint and final report.
 
 ---
 
@@ -188,7 +188,7 @@
 ## the agent's Discretion
 
 - Exact column names for canonical and helper fields.
-- Whether the canonical build is split between notebook cells and helper scripts.
+- Whether the canonical build is split between Markdown checkpoints and helper scripts.
 - Schema validation tooling and QA/assertion implementation details.
 - Output file naming for cleaned datasets and helper artifacts.
 

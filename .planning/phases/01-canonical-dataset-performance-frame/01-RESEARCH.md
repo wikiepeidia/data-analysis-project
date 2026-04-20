@@ -79,10 +79,10 @@ The smallest reliable repo structure for this phase is:
 - `src/youtube_trends/performance_frame.py` — video-country snapshot and proxy computation
 - `tests/test_canonical_dataset.py` — schema and normalization tests
 - `tests/test_performance_frame.py` — proxy and anchor-row tests
-- `tests/test_phase1_notebook_contract.py` — notebook contract checks
-- `notebooks/01_canonical_dataset.ipynb` — notebook deliverable for Phase 1 narrative and regeneration path
+- `tests/test_phase1_checkpoint_contract.py` — Markdown checkpoint contract checks
+- `checkpoints/01_canonical_dataset.md` — Markdown checkpoint for the Phase 1 narrative and regeneration path
 
-This keeps checkpoint notebooks available for Phase 1 validation while still moving the brittle parsing logic into importable Python modules that can be tested.
+This keeps a lightweight Markdown checkpoint available for Phase 1 validation while still moving the brittle parsing logic into importable Python modules that can be tested.
 
 ## Risks to Plan Around
 
@@ -97,7 +97,7 @@ This keeps checkpoint notebooks available for Phase 1 validation while still mov
 Use lightweight automated verification from the start.
 
 - **Framework:** `pytest`
-- **Quick command:** `python -m pytest tests/test_canonical_dataset.py tests/test_performance_frame.py tests/test_phase1_notebook_contract.py -q`
+- **Quick command:** `python -m pytest tests/test_canonical_dataset.py tests/test_performance_frame.py tests/test_phase1_checkpoint_contract.py -q`
 - **Full command:** `python -m pytest -q`
 - **Sampling approach:** run the relevant test file after every task commit, then run the phase quick command after each completed plan
 
@@ -109,12 +109,12 @@ Required test coverage for this phase:
 - placeholder text becomes consistent missing-value handling with helper flags
 - first trending snapshot is the anchor row for the video-country table
 - `trend_days_in_country_proxy` is explicit and counts row history correctly
-- the notebook states the proxy, the no-causality constraint, and the missing-duration limitation
+- the Markdown checkpoint states the proxy, the no-causality constraint, and the missing-duration limitation
 
 ## Planning Implications
 
 - **Plan 01 should build the row-level pipeline and validation harness first.**
-- **Plan 02 should build the video-country snapshot table and notebook documentation second.**
+- **Plan 02 should build the video-country snapshot table and Markdown checkpoint documentation second.**
 - The second plan should depend on the first because it consumes the canonical row-level output and shared normalization rules.
 
 ## Sources
